@@ -4,7 +4,7 @@ import pkg from "./package.json"
 import resolve from "@rollup/plugin-node-resolve"
 import typescript from "rollup-plugin-typescript2"
 
-const input = "src/index.tsx"
+const input = "src/index.ts"
 const external = Object.keys(pkg.peerDependencies || {})
 
 /** @type {import('rollup').RollupOptions} */
@@ -19,7 +19,7 @@ export default [
         plugins: [
             typescript({
                 typescript: require("typescript"),
-                tsconfig: "./tsconfig.build.json",
+                tsconfig: "./tsconfig.json",
             }),
             resolve(),
             babel({
@@ -39,7 +39,7 @@ export default [
         plugins: [
             typescript({
                 typescript: require("typescript"),
-                tsconfig: "./tsconfig.build.json",
+                tsconfig: "./tsconfig.json",
             }),
             resolve(),
             babel({
